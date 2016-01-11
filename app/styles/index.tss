@@ -1,0 +1,63 @@
+"#win1": {
+	backgroundColor: '#fff'
+}
+
+"#imageViewMe": {
+  zIndex: -1,
+  visible: false,
+  center: {
+    x: 150,
+    y: 240
+  }
+}
+
+"#chooseLabel": {
+  backgroundColor: "#70F",
+  width: Ti.UI.FILL,
+  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+  height: Ti.UI.FILL,
+  color: "#fff",
+  shadowColor: "#000",
+  shadowOffset: {
+    x: 2,
+    y: 2
+  },
+  font: {
+    // this font is iOS only
+    fontFamily: "AmericanTypewriter-Bold",
+    fontSize: 36
+  }
+}
+
+"#imageViewFace": {
+  visible: false,
+  width: Ti.UI.FILL,
+  bottom: 40,
+  zIndex: 5
+}
+
+"#footer": {
+	height: 40,
+	backgroundColor: '#000',
+	bottom: 0,
+	left: 0,
+	zIndex: 2
+}
+
+"#btnSave": {
+	color: "#fff",
+	width: 100,
+	left: 10,
+	height: 34,
+	top: 3
+}
+
+"#zoomSlider": {
+	right: 10,
+	top: 8,
+	height: 30,
+	width: 180,
+	min: 0,
+	max: 3,
+	value: 1
+}

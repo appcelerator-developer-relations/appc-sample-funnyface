@@ -1,0 +1,11 @@
+<Alloy>
+	<Window id="win1" title="Funny Face">
+		<ImageView id="imageViewMe" image="/images/me.png" />
+		<Label id="chooseLabel" onClick="choose">TAP TO CHOOSE AN IMAGE</Label>
+		<ImageView id="imageViewFace" onTouchstart="onFaceTouchstart" onTouchmove="onFaceTouchmove" />
+		<View id="footer">
+			<Button id="btnSave" onClick="send">Send Photo</Button>
+			<Slider id="zoomSlider" onChange="onSliderChange" />
+		</View>
+	</Window>
+</Alloy>
