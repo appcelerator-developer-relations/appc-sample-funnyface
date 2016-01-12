@@ -1,3 +1,5 @@
+var measurement = require('alloy/measurement');
+
 //this will determine whether we load the 4 funny face
 //images or whether one is selected already
 var imageSelected = false;
@@ -156,14 +158,20 @@ function setChosenImage(e) {
   });
 
   //create3DMatrix won’t work on Android
-  var transform4 = Ti.UI.create3DMatrix();
-  transform4 = transform4.rotate(200, 0, 1, 1);
-  transform4 = transform4.scale(2);
-  transform4 = transform4.translate(20, 50, 170);
-  //the m34 property controls the perspective of the 3D view
-  transform4.m34 = 1.0 / -3000;
-  //m34 is the position at [3,4]
-  //in the matrix
+  var transform4;
+  if (OS_ANDROID) {
+    transform4 = Ti.UI.create2DMatrix();
+    transform4 = transform2.scale(0);
+  } else {
+    transform4 = Ti.UI.create3DMatrix();
+    transform4 = transform4.rotate(200, 0, 1, 1);
+    transform4 = transform4.scale(2);
+    transform4 = transform4.translate(20, 50, 170);
+    //the m34 property controls the perspective of the 3D view
+    transform4.m34 = 1.0 / -3000;
+    //m34 is the position at [3,4]
+    //in the matrix
+  }
 
   var animation4 = Ti.UI.createAnimation({
     transform: transform4,
@@ -183,11 +191,13 @@ function setChosenImage(e) {
 }
 
 function onFaceTouchstart(e) {
+  e = OS_ANDROID ? measurement.pointPXToDP(e) : e;
   $.imageViewMe.ox = e.x - $.imageViewMe.center.x;
   $.imageViewMe.oy = e.y - $.imageViewMe.center.y;
 }
 
 function onFaceTouchmove(e) {
+  e = OS_ANDROID ? measurement.pointPXToDP(e) : e;
   $.imageViewMe.center = {
     x: (e.x - $.imageViewMe.ox),
     y: (e.y - $.imageViewMe.oy)
