@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
-  <id>com.appcelerator.funnyface</id>
+  <id>com.appcelerator.funnyface.classic</id>
   <name>Funny Face</name>
   <version>1.0</version>
   <publisher>Appcelertor</publisher>
   <url>http://www.appcelerator.com</url>
-  <description>Alloy port of the Funny Face sample in the Titanium Cookbook, Second Edition</description>
+  <description>Original classic Funny Face sample in the Titanium Cookbook, Second Edition</description>
   <copyright>2016 by Jason Kneen</copyright>
   <icon>appicon.png</icon>
   <fullscreen>false</fullscreen>
@@ -47,8 +47,5 @@
     <target device="mobileweb">false</target>
     <target device="windows">false</target>
   </deployment-targets>
-  <sdk-version>5.1.1.GA</sdk-version>
-  <plugins>
-    <plugin version="1.0">ti.alloy</plugin>
-  </plugins>
+  <sdk-version>5.1.2.GA</sdk-version>
 </ti:app>
